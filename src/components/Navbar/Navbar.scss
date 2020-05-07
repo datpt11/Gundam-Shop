@@ -10,7 +10,7 @@
   list-style-type: none;
   text-align: center;
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(8, 1fr);
 }
 .nav-link {
   color: $mainBlack;
@@ -21,6 +21,12 @@
   &:hover {
     color: $mainWhite;
   }
+}
+.search-btn {
+  text-align: right;
+}
+.card-btn {
+  text-align: left;
 }
 .active {
   color: $mainWhite;

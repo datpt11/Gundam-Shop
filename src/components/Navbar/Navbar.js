@@ -40,7 +40,7 @@ export default function Navbar() {
         </li>
         <li>
           <Link
-            to='/contact'
+            to='/gaming-gear'
             onClick={() => toggle('3')}
             className={classNames('nav-link', {
               'active': isActive === '3',
@@ -64,7 +64,7 @@ export default function Navbar() {
         </li>
         <li>
           <Link
-            to='/about'
+            to='/contact'
             onClick={() => toggle('5')}
             className={classNames('nav-link', {
               'active': isActive === '5',
@@ -76,7 +76,7 @@ export default function Navbar() {
         </li>
         <li>
           <Link
-            to='/gaming-gear'
+            to='/collection'
             onClick={() => toggle('6')}
             className={classNames('nav-link', {
               'active': isActive === '6',
@@ -87,17 +87,29 @@ export default function Navbar() {
           </Link>
         </li>
         <li>
+          <Link
+            to='/search'
+            onClick={() => toggle('7')}
+            className={classNames('search-btn', 'nav-link', {
+              'active': isActive === '7',
+            })}
+            alt=''
+          >
+            <i class='fas fa-search'></i>
+          </Link>
+        </li>
+        <li>
           <CardContext.Consumer>
             {({ card }) => (
               <Link
                 to='/card'
-                onClick={() => toggle('7')}
-                className={classNames('nav-link', {
-                  'active': isActive === '7',
+                onClick={() => toggle('8')}
+                className={classNames('card-btn', 'nav-link', {
+                  'active': isActive === '8',
                 })}
                 alt=''
               >
-                <i class='fas fa-shopping-cart'></i> ( {card.length})
+                <i class='fas fa-shopping-cart'></i> ( {card.length} )
               </Link>
             )}
           </CardContext.Consumer>
