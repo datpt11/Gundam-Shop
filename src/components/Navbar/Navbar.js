@@ -3,6 +3,7 @@ import logo from '../../logo.svg';
 import './Navbar.scss';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
+import CardContext from '../contexts/CardContext';
 export default function Navbar() {
   const [isActive, setIsActive] = useState(false);
   const toggle = (tab) => {
@@ -46,7 +47,7 @@ export default function Navbar() {
             })}
             alt=''
           >
-            contact
+            gaming gear
           </Link>
         </li>
         <li>
@@ -58,20 +59,48 @@ export default function Navbar() {
             })}
             alt=''
           >
-            about
+            about us
           </Link>
         </li>
         <li>
           <Link
-            to='/card'
+            to='/about'
             onClick={() => toggle('5')}
             className={classNames('nav-link', {
               'active': isActive === '5',
             })}
             alt=''
           >
-            Card ( 0 )
+            contact
           </Link>
+        </li>
+        <li>
+          <Link
+            to='/gaming-gear'
+            onClick={() => toggle('6')}
+            className={classNames('nav-link', {
+              'active': isActive === '6',
+            })}
+            alt=''
+          >
+            collection
+          </Link>
+        </li>
+        <li>
+          <CardContext.Consumer>
+            {({ card }) => (
+              <Link
+                to='/card'
+                onClick={() => toggle('7')}
+                className={classNames('nav-link', {
+                  'active': isActive === '7',
+                })}
+                alt=''
+              >
+                <i class='fas fa-shopping-cart'></i> ( {card.length})
+              </Link>
+            )}
+          </CardContext.Consumer>
         </li>
       </ul>
     </nav>

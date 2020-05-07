@@ -3,31 +3,34 @@ import './App.scss';
 import Navbar from './components/Navbar/Navbar';
 import ProductList from './components/ProductList';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import CardProvider from './components/provider/CardProvider';
 function App() {
   return (
-    <Router>
-      <main>
-        <Navbar />
+    <CardProvider>
+      <Router>
+        <main>
+          <Navbar />
 
-        <Switch>
-          <Route path='/' exact>
-            <Home />
-          </Route>
-          <Route path='/gundam' exact>
-            <ProductList />
-          </Route>
-          <Route path='/contact' exact>
-            <Contact />
-          </Route>
-          <Route path='/about' exact>
-            <About />
-          </Route>
-          <Route path='/card' exact>
-            <Card />
-          </Route>
-        </Switch>
-      </main>
-    </Router>
+          <Switch>
+            <Route path='/' exact>
+              <Home />
+            </Route>
+            <Route path='/gundam' exact>
+              <ProductList />
+            </Route>
+            <Route path='/contact' exact>
+              <Contact />
+            </Route>
+            <Route path='/about' exact>
+              <About />
+            </Route>
+            <Route path='/card' exact>
+              <Card />
+            </Route>
+          </Switch>
+        </main>
+      </Router>
+    </CardProvider>
   );
 }
 function Home() {

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Product.scss';
+import CardContext from '../contexts/CardContext';
 export default class Product extends Component {
   render() {
     const { product } = this.props;
@@ -15,7 +16,18 @@ export default class Product extends Component {
           <h3>{product.name}</h3>
           <p>{product.des}</p>
         </div>
-        <button className='addToCard-btn'>Add to card</button>
+        <CardContext.Consumer>
+          {({ addToCard }) => (
+            <button
+              className='addToCard-btn'
+              onClick={() => {
+                addToCard(product);
+              }}
+            >
+              Add to card
+            </button>
+          )}
+        </CardContext.Consumer>
       </article>
     );
   }
