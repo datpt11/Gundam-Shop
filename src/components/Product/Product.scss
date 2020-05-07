@@ -48,6 +48,10 @@ $size: 10rem;
   p {
     font-size: 1.5rem;
     margin: 0.4rem 0 0.6rem 0;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
   }
 }
 .addToCard-btn {

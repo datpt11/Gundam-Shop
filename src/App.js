@@ -12,7 +12,6 @@ function App() {
         <Switch>
           <Route path='/' exact>
             <Home />
-            <ProductList />
           </Route>
           <Route path='/gundam' exact>
             <ProductList />
