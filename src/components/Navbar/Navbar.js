@@ -12,7 +12,7 @@ export default function Navbar() {
 
   return (
     <nav className='navbar'>
-      <img src={logo} width='100px' alt='' />
+      <img src={logo} width='50px' height='50px' alt='' />
       <ul className='nav-links'>
         <li>
           <Link
@@ -40,22 +40,10 @@ export default function Navbar() {
         </li>
         <li>
           <Link
-            to='/gaming-gear'
+            to='/about'
             onClick={() => toggle('3')}
             className={classNames('nav-link', {
               'active': isActive === '3',
-            })}
-            alt=''
-          >
-            gaming gear
-          </Link>
-        </li>
-        <li>
-          <Link
-            to='/about'
-            onClick={() => toggle('4')}
-            className={classNames('nav-link', {
-              'active': isActive === '4',
             })}
             alt=''
           >
@@ -65,51 +53,39 @@ export default function Navbar() {
         <li>
           <Link
             to='/contact'
-            onClick={() => toggle('5')}
+            onClick={() => toggle('4')}
             className={classNames('nav-link', {
-              'active': isActive === '5',
+              'active': isActive === '4',
             })}
             alt=''
           >
             contact
           </Link>
         </li>
-        <li>
-          <Link
-            to='/collection'
-            onClick={() => toggle('6')}
-            className={classNames('nav-link', {
-              'active': isActive === '6',
-            })}
-            alt=''
-          >
-            collection
-          </Link>
-        </li>
-        <li>
+        <li className='search-btn'>
           <Link
             to='/search'
-            onClick={() => toggle('7')}
-            className={classNames('search-btn', 'nav-link', {
-              'active': isActive === '7',
+            onClick={() => toggle('5')}
+            className={classNames('nav-link', {
+              'active': isActive === '5',
             })}
             alt=''
           >
-            <i class='fas fa-search'></i>
+            <i className='fas fa-search'></i>
           </Link>
         </li>
-        <li>
+        <li className='card-btn'>
           <CardContext.Consumer>
             {({ card }) => (
               <Link
                 to='/card'
-                onClick={() => toggle('8')}
-                className={classNames('card-btn', 'nav-link', {
-                  'active': isActive === '8',
+                onClick={() => toggle('6')}
+                className={classNames('nav-link', {
+                  'active': isActive === '6',
                 })}
                 alt=''
               >
-                <i class='fas fa-shopping-cart'></i> ( {card.length} )
+                <i className='fas fa-shopping-cart'></i> ( {card.length} )
               </Link>
             )}
           </CardContext.Consumer>

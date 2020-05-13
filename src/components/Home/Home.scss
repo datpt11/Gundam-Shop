@@ -1,0 +1,42 @@
+@import '../../index.scss';
+.home-container {
+  margin: 0 2rem;
+  position: relative;
+  padding: 1.5rem 0;
+  img {
+    width: 100%;
+    height: 80vh;
+    object-fit: cover;
+  }
+  .home-overlay {
+    position: absolute;
+    top: 1.5rem;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 200;
+    width: 100%;
+    height: 80vh;
+  }
+  .home-heading {
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    text-align: center;
+    width: 40%;
+    z-index: 300;
+    h1 {
+      color: $mainWhite;
+      font-size: 5rem;
+      font-weight: 400;
+      margin: 2rem;
+    }
+    .btn {
+      border: 0.2rem solid $mainWhite;
+      color: white;
+      font-size: 2rem;
+      &:hover {
+        background: $mainWhite;
+        color: $mainBlack;
+      }
+    }
+  }
+}

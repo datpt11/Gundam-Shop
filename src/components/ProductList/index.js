@@ -1,17 +1,24 @@
 import React, { Component } from 'react';
 import Product from '../Product/Product';
-import { ProductData } from '../ProductData';
 import './ProductList.scss';
+import axios from 'axios';
 import Paginate from '../Paginate/Paginate';
 export default class ProductList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      products: ProductData,
+      products: [],
       productsPerPage: 8,
       currentPage: 1,
     };
     this.onChangePage = this.onChangePage.bind(this);
+  }
+  componentDidMount() {
+    axios.get('http://localhost:8080/products').then((res) => {
+      this.setState({
+        products: res.data,
+      });
+    });
   }
   onChangePage(pageNumber) {
     this.setState({

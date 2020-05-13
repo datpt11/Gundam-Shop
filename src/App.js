@@ -4,6 +4,7 @@ import Navbar from './components/Navbar/Navbar';
 import ProductList from './components/ProductList';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import CardProvider from './components/provider/CardProvider';
+import Home from './components/Home/Home';
 function App() {
   return (
     <CardProvider>
@@ -32,9 +33,6 @@ function App() {
       </Router>
     </CardProvider>
   );
-}
-function Home() {
-  return <h2>Home</h2>;
 }
 
 function About() {

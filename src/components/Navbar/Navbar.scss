@@ -1,16 +1,17 @@
 @import '../../index.scss';
 .navbar {
   background: $mainRed;
-  padding: 1.5rem;
   display: grid;
   grid-template-columns: auto 1fr;
+  box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.3);
+  margin-top: 2rem;
 }
 .nav-links {
   align-self: center;
   list-style-type: none;
   text-align: center;
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: repeat(10, 1fr);
 }
 .nav-link {
   color: $mainBlack;
@@ -24,9 +25,11 @@
 }
 .search-btn {
   text-align: right;
+  grid-column-start: 9;
 }
 .card-btn {
   text-align: left;
+  grid-column-start: 10;
 }
 .active {
   color: $mainWhite;
