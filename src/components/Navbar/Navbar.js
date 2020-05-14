@@ -7,18 +7,35 @@ import CardContext from '../contexts/CardContext';
 export default function Navbar() {
   const [isActive, setIsActive] = useState(false);
   const toggle = (tab) => {
+    toggleChange();
     if (isActive !== tab) setIsActive(tab);
   };
-
+  const [isCheck, setIsCheck] = useState(false);
+  const toggleChange = () => {
+    setIsCheck(!isCheck);
+  };
   return (
-    <nav className='navbar'>
-      <img src={logo} width='50px' height='50px' alt='' />
-      <ul className='nav-links'>
+    <nav className='top-nav'>
+      <label className='logo'>
+        <img src={logo} width='50px' height='50px' alt='' />
+      </label>
+      <input
+        className={classNames({
+          'check': isCheck === true,
+        })}
+        onChange={toggleChange}
+        type='checkbox'
+        id='check'
+      />
+      <label className='btnCheck' htmlFor='check'>
+        <i className='fas fa-bars'></i>
+      </label>
+      <ul className='nav-items'>
         <li>
           <Link
             to='/'
             onClick={() => toggle('1')}
-            className={classNames('nav-link', {
+            className={classNames('nav-item', {
               'active': isActive === '1',
             })}
             alt=''
@@ -30,7 +47,7 @@ export default function Navbar() {
           <Link
             to='/gundam'
             onClick={() => toggle('2')}
-            className={classNames('nav-link', {
+            className={classNames('nav-item', {
               'active': isActive === '2',
             })}
             alt=''
@@ -42,19 +59,19 @@ export default function Navbar() {
           <Link
             to='/about'
             onClick={() => toggle('3')}
-            className={classNames('nav-link', {
+            className={classNames('nav-item', {
               'active': isActive === '3',
             })}
             alt=''
           >
-            about us
+            about
           </Link>
         </li>
         <li>
           <Link
             to='/contact'
             onClick={() => toggle('4')}
-            className={classNames('nav-link', {
+            className={classNames('nav-item', {
               'active': isActive === '4',
             })}
             alt=''
@@ -66,7 +83,7 @@ export default function Navbar() {
           <Link
             to='/search'
             onClick={() => toggle('5')}
-            className={classNames('nav-link', {
+            className={classNames('nav-item', {
               'active': isActive === '5',
             })}
             alt=''
@@ -80,12 +97,12 @@ export default function Navbar() {
               <Link
                 to='/card'
                 onClick={() => toggle('6')}
-                className={classNames('nav-link', {
+                className={classNames('nav-item', {
                   'active': isActive === '6',
                 })}
                 alt=''
               >
-                <i className='fas fa-shopping-cart'></i> ( {card.length} )
+                <i className='fas fa-shopping-cart'></i> ({card.length})
               </Link>
             )}
           </CardContext.Consumer>
